@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from typing import List
 
 app = FastAPI(title="Order Service")
 
@@ -27,4 +26,4 @@ def create_order(order: OrderRequest):
 
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    return {"status": "ok", "service": "order-service", "version": "1.0.1"}
